@@ -13,6 +13,7 @@ import java.util.concurrent.TimeUnit
 object NetworkModule : KoinComponent {
 
     private val requestAuthInterceptor: RequestAuthInterceptor by inject()
+    private val refreshTokenAuthenticator: RefreshTokenAuthenticator by inject()
 
     private var requestTimeOut = 120L
 
@@ -36,6 +37,7 @@ object NetworkModule : KoinComponent {
         val httpClient = builder.apply {
             addNetworkInterceptor(logInterceptor)
             addNetworkInterceptor(requestAuthInterceptor)
+            authenticator(refreshTokenAuthenticator)
 
             callTimeout(requestTimeOut, TimeUnit.SECONDS)
             connectTimeout(requestTimeOut, TimeUnit.SECONDS)

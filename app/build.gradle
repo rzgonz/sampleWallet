@@ -52,6 +52,8 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
     implementation 'androidx.compose.ui:ui-tooling-preview:1.0.0-rc01'
 
+    implementation Libraries.eventBus
+
     //compose
     def composeBom = platform(Libraries.composeBom)
     implementation composeBom

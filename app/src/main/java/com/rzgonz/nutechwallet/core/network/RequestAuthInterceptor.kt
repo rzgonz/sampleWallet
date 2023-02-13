@@ -9,6 +9,7 @@ class RequestAuthInterceptor : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
         var request = chain.request()
 
+
         if (request.header("No-Authentication") == null) {
             //val token = getTokenFromSharedPreference();
             //or use Token Function

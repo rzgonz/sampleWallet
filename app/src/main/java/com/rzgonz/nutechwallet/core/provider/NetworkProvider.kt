@@ -1,9 +1,10 @@
 package com.rzgonz.nutechwallet.core.provider
 
 import com.google.gson.Gson
-import com.rzgonz.nutechwallet.core.utils.clazz
 import com.rzgonz.nutechwallet.core.network.NetworkModule
+import com.rzgonz.nutechwallet.core.network.RefreshTokenAuthenticator
 import com.rzgonz.nutechwallet.core.network.RequestAuthInterceptor
+import com.rzgonz.nutechwallet.core.utils.clazz
 import org.koin.core.module.Module
 import org.koin.dsl.module
 
@@ -15,6 +16,7 @@ class NetworkProvider private constructor() : BaseModuleProvider {
     private val networkModule = module {
         single { Gson() }
         single { RequestAuthInterceptor() }
+        single { RefreshTokenAuthenticator() }
         single { NetworkModule.getClient() }
         single { NetworkModule.getRetrofit(okHttpClient = get()) }
     }

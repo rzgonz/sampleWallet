@@ -5,19 +5,24 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
 import androidx.compose.runtime.collectAsState
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.rzgonz.nutechwallet.R
 import com.rzgonz.nutechwallet.compose.view.HomeCardItemView
 import com.rzgonz.nutechwallet.compose.view.ListTransactionView
+import com.rzgonz.nutechwallet.core.network.NetworkUtils
 import com.rzgonz.nutechwallet.modules.profile.UpdateProfileActivity
 import com.rzgonz.nutechwallet.modules.profile.UpdateProfileArgs
 import com.rzgonz.nutechwallet.modules.topup.TopUpActivity
@@ -86,7 +91,8 @@ class HomeActivity : AppCompatActivity() {
             )
             Text(
                 text = stringResource(R.string.home_text_history_transaction), color =
-                Color.Black, fontSize = 18.sp
+                Color.Black, fontSize = 18.sp,
+                modifier = Modifier.padding(horizontal = 12.dp)
             )
             ListTransactionView(
                 dataTransaction = state.value.transactionHistoryAsync
