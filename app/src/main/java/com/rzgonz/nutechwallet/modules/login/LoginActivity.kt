@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.Button
 import androidx.compose.material.Icon
@@ -95,11 +96,6 @@ class LoginActivity : AppCompatActivity() {
 
         Scaffold(
             scaffoldState = scaffoldState,
-            topBar = {
-                TopAppBar(
-                    title = { Text(text = stringResource(R.string.home_text_screen_title)) },
-                )
-            },
             content = {
                 LoginContainer(state)
             }

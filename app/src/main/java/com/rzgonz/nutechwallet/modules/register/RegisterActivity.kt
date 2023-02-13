@@ -78,23 +78,13 @@ class RegisterActivity : AppCompatActivity() {
                 )
             }
         }
+
+        if (state.value.registerResponseAsync is Fail) {
+            val error = (state.value.registerResponseAsync as Fail<*>).error
+            showToastMessage(error.message.orEmpty())
+        }
         Scaffold(
             scaffoldState = scaffoldState,
-            topBar = {
-                TopAppBar(
-                    title = { Text(text = stringResource(R.string.home_text_screen_title)) },
-                )
-            },
-            content = {
-                RegisterContainer(state)
-            }
-        )
-    }
-
-    @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
-    @Composable
-    private fun RegisterContainer(state: State<RegisterState>) {
-        Scaffold(
             topBar = {
                 TopAppBar(
                     title = { Text(text = stringResource(R.string.register_text_register_screen)) },
@@ -112,6 +102,7 @@ class RegisterActivity : AppCompatActivity() {
         )
     }
 
+
     @Composable
     private fun RegisterFormView(state: State<RegisterState>) {
         val inputEmail = remember { mutableStateOf(TextFieldValue(extraEmail)) }
@@ -122,12 +113,6 @@ class RegisterActivity : AppCompatActivity() {
         val passwordInputError = remember { mutableStateOf(Exception()) }
         val firstNameInputError = remember { mutableStateOf(Exception()) }
         val lastNamedInputError = remember { mutableStateOf(Exception()) }
-
-        if (state.value.registerResponseAsync is Fail) {
-            val error = (state.value.registerResponseAsync as Fail<*>).error
-            showToastMessage(error.message.orEmpty())
-        }
-
 
         if (state.value.registerResponseAsync is Success) {
             showToastMessage(stringResource(R.string.register_text_succes_register))
