@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Nutech Wallet</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+
+    <string name="transaction_text_date">Tanggal  %1$s </string>
+    <string name="transaction_text_transactionId">Id Transaksi => %1$s </string>
+    <string name="home_text_hallo">Hai, %1$s </string>
+    <string name="home_text_balance">Rp. %1$s </string>
+    <string name="payment_text_max_transfer">Max Transfer is Rp. %1$s </string>
+    <string name="home_text_saldo">Saldo</string>
+    <string name="home_text_topup">Topup</string>
+    <string name="home_text_transfer">Transfer</string>
+    <string name="home_text_history_transaction">History Transaction</string>
+    <string name="home_text_screen_title">Wellcome to Nutech Wallet</string>
+    <string name="common_text_firstname_error">First Name Empty</string>
+    <string name="common_text_lastname_error">Last Name Empty</string>
+    <string name="common_text_email_empty">Email Is Empty</string>
+    <string name="common_text_email_not_valid">Email not Valid</string>
+    <string name="commont_button_update_profile">Update Profile</string>
+    <string name="common_text_hint_lastname">Enter Last Name</string>
+    <string name="common_text_hint_firstname">Enter First Name</string>
+    <string name="profile_text_updateprofile_screen">Update Profile Screen</string>
+    <string name="payment_title_saldo_not_enough">Saldo not enough</string>
+    <string name="common_button_submit">Submit</string>
+    <string name="payment_title_transfer_screen">Transfer Screen</string>
+    <string name="login_button_register">Tidak punya account, Click disini</string>
+    <string name="login_button_login">Login</string>
+    <string name="common_text_loading">Please Waiting</string>
+    <string name="register_text_succes_register">Register Success please login</string>
+    <string name="register_text_register_screen">Register Screen</string>
+</resources>
